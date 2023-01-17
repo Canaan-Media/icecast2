@@ -12,6 +12,6 @@ RUN apt update && apt upgrade -y && \
     rm -rf /var/lib/apt/lists/* && \
     sed -i -e "s/<hostname>localhost/<hostname>audio.canaanradio.com/g" -e "s/<admin-password>hackme/<admin-password>william/g" -e "s/<admin-user>admin/<admin-user>source/g" -e "s/<relay-password>hackme/<relay-password>william/g" -e "s/<source-password>hackme/<source-password>william/g" -e "s/<location>Earth/<location>North Platte, NE/g" -e "s/<admin>icemaster@localhost/<admin>fyi@canaanradio.com/g" /etc/icecast2/icecast.xml
 
-CMD icecast2 -b -c /etc/icecast2/icecast2.xml && tail -F /var/log/icecast2/error.log
+CMD chmod -R a+rw /var/log/icecast2 && icecast2 -b -c /etc/icecast2/icecast2.xml && tail -F /var/log/icecast2/error.log
 
 
