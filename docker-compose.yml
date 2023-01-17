@@ -1,0 +1,11 @@
+version: "1"
+
+services:
+
+  icecast2:
+    image: pltnk/icecast2
+    container_name: icecast2
+    ports:
+      - 8000:8000
+      - 8080:8080
+
