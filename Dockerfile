@@ -9,9 +9,9 @@ RUN apt update && apt upgrade -y && \
     sed -i "s#ENABLE=.*#ENABLE=true#" /etc/default/icecast2 && \
     sed -i 's/Earth/North Platte, NE/g' /etc/icecast2/icecast.xml && \
     sed -i 's/icemaster@localhost/fyi@canaanradio.com/g' /etc/icecast2/icecast.xml && \
-    sed -i 's/localhost/audio.canaanradio.com/g' /etc/icecast2/icecast.xml && \
-    sed -i 's/admin/source/g' /etc/icecast2/icecast.xml && \
-    sed -i 's/hackme/william/g' /etc/icecast2/icecast.xml && \
+    sed -i 's/<hostname>localhost/<hostname>audio.canaanradio.com/g' /etc/icecast2/icecast.xml && \
+    sed -i 's/user>admin/user>source/g' /etc/icecast2/icecast.xml && \
+    sed -i 's/password>hackme/password>william/g' /etc/icecast2/icecast.xml && \
     cat /etc/default/icecast2 && \
     apt autoremove && apt clean && \
     rm -rf /var/lib/apt/lists/*
