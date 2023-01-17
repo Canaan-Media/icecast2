@@ -5,7 +5,7 @@ LABEL maintainer="Canaan Media <info@canaanmedia.co>" \
 
 # install icecast2 and enable its autostart
 RUN apt update && apt upgrade -y && \
-    apt install -y icecast2 nano && \
+    apt install -y icecast2 nano curl && \
     sed -i "s#ENABLE=.*#ENABLE=true#" /etc/default/icecast2 && \
     cat /etc/default/icecast2 && \
     apt autoremove && apt clean && \
